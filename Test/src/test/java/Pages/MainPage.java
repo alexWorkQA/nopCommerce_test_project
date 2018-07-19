@@ -11,11 +11,11 @@ public class MainPage extends BasePage {
     //MainPage Elements
 
     //LogIn button
-    @FindBy(xpath=".////a[@href='/login']")
-    public WebElement loginButton;
+    @FindBy(xpath=".//a[@href='/login']")
+   private WebElement loginButton;
 
 
-    public void clickLogInButton(){
+    protected void clickLogInButton(){
         loginButton.click();
     }
 }
