@@ -9,5 +9,7 @@ public class LoginTest extends BaseTest {
     public void loginTest() {
         app.commonHelper.openWebSite();
         app.mainPageHelper.openLoginPage();
+        app.loginPageHelper.loginAsValidUser();
+
     }
 }

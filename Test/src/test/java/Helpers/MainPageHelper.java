@@ -10,4 +10,6 @@ public class MainPageHelper extends MainPage {
     public void openLoginPage(){
         clickLogInButton();
     }
+
+   // public void open
 }

@@ -14,8 +14,16 @@ public class MainPage extends BasePage {
     @FindBy(xpath=".//a[@href='/login']")
    private WebElement loginButton;
 
+    @FindBy(xpath=".//a[@class='ico-account']")
+    private WebElement myAccountButton;
 
-    protected void clickLogInButton(){
+
+    protected LoginPage clickLogInButton(){
         loginButton.click();
+        return new LoginPage();
+    }
+
+    protected void clickMyAccountButton(){
+        myAccountButton.click();
     }
 }
