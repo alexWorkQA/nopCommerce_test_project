@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name=" Tests.Test">
+
+    <test name="Webdriver">
+        <classes>
+            <!--class name="Tests.Test_add_new_Comment" /-->
+            <!--class name = "Tests.TestGroup_second"/-->
+        </classes>
+    </test>
+
+</suite>
