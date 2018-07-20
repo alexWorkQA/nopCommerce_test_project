@@ -11,5 +11,7 @@ public class MainPageHelper extends MainPage {
         clickLogInButton();
     }
 
-   // public void open
+   public void openAccountPage(){
+        clickMyAccountButton();
+   }
 }

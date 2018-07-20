@@ -6,8 +6,8 @@ import Pages.LoginPage;
 
 public class LoginPageHelper extends LoginPage {
 
-    public void loginAsValidUser(){
-        User user = UserFactory.getValidUser();
+    public void loginAsValidUser(User user){
+        //User user = UserFactory.getValidUser();
         loginToSite(user);
 
     }

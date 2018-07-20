@@ -17,13 +17,22 @@ public class MainPage extends BasePage {
     @FindBy(xpath=".//a[@class='ico-account']")
     private WebElement myAccountButton;
 
+    @FindBy(xpath=".//a[@href='/register']")
+    private WebElement registerButton;
+
 
     protected LoginPage clickLogInButton(){
         loginButton.click();
         return new LoginPage();
     }
 
-    protected void clickMyAccountButton(){
+    protected AccountPage clickMyAccountButton(){
         myAccountButton.click();
+        return new AccountPage();
+    }
+
+    protected RegisterPage clickRegisterButton(){
+        registerButton.click();
+        return new RegisterPage();
     }
 }
