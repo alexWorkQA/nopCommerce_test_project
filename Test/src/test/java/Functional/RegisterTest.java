@@ -1,4 +1,4 @@
-package Tests;
+package Functional;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

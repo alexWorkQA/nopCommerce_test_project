@@ -2,7 +2,7 @@ package Pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.reporters.jq.Main;
+
 
 public class RegisterResultPage extends BasePage {
 

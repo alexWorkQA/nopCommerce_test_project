@@ -11,35 +11,36 @@ public class MainPage extends BasePage {
     //MainPage Elements
 
     //LogIn button
-    @FindBy(xpath=".//a[@href='/login']")
-   private WebElement loginButton;
+    @FindBy(xpath = ".//a[@href='/login']")
+    private WebElement loginButton;
 
-    @FindBy(xpath=".//a[@class='ico-account']")
+    @FindBy(xpath = ".//a[@class='ico-account']")
     private WebElement myAccountButton;
 
-    @FindBy(xpath=".//a[@href='/register']")
+    @FindBy(xpath = ".//a[@href='/register']")
     private WebElement registerButton;
 
-    @FindBy(xpath=".//a[@href='/logout']")
+    @FindBy(xpath = ".//a[@href='/logout']")
     private WebElement logoutButton;
 
 
-    protected LoginPage clickLogInButton(){
+    //MainPage methods
+    protected LoginPage clickLogInButton() {
         loginButton.click();
         return new LoginPage();
     }
 
-    protected AccountPage clickMyAccountButton(){
+    protected AccountPage clickMyAccountButton() {
         myAccountButton.click();
         return new AccountPage();
     }
 
-    protected RegisterPage clickRegisterButton(){
+    protected RegisterPage clickRegisterButton() {
         registerButton.click();
         return new RegisterPage();
     }
 
-    protected MainPage clickLogoutButton(){
+    protected MainPage clickLogoutButton() {
         logoutButton.click();
         return new MainPage();
     }

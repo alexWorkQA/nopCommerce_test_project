@@ -10,12 +10,12 @@ public class BasePage {
 
     protected static WebDriver driver;
 
-    static{
-        driver = WebDriverFactory.getDriver();
-        driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+    static {
+        driver = WebDriverFactory.getDriverInstance();
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
     }
 
-    public BasePage(){
-        PageFactory.initElements(driver,this);
+    public BasePage() {
+        PageFactory.initElements(driver, this);
     }
 }
