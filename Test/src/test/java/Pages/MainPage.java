@@ -20,6 +20,9 @@ public class MainPage extends BasePage {
     @FindBy(xpath=".//a[@href='/register']")
     private WebElement registerButton;
 
+    @FindBy(xpath=".//a[@href='/logout']")
+    private WebElement logoutButton;
+
 
     protected LoginPage clickLogInButton(){
         loginButton.click();
@@ -34,5 +37,10 @@ public class MainPage extends BasePage {
     protected RegisterPage clickRegisterButton(){
         registerButton.click();
         return new RegisterPage();
+    }
+
+    protected MainPage clickLogoutButton(){
+        logoutButton.click();
+        return new MainPage();
     }
 }

@@ -27,6 +27,9 @@ public class RegisterPage extends BasePage{
     protected RegisterResultPage fillOutForm(User user){
         fisrtNameField.sendKeys(user.getFirstname());
         lastNameField.sendKeys(user.getLastname());
+        emailField.sendKeys(user.getEmail());
+        passwordField.sendKeys(user.getPassword());
+        confirmPasswordField.sendKeys(user.getPassword());
         registerButton.click();
         return new RegisterResultPage();
     }

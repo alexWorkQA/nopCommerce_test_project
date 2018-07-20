@@ -1,10 +1,7 @@
 package Application;
 
 
-import Helpers.AccountPageHelper;
-import Helpers.CommonHelper;
-import Helpers.LoginPageHelper;
-import Helpers.MainPageHelper;
+import Helpers.*;
 import Pages.AccountPage;
 
 public class App {
@@ -12,5 +9,7 @@ public class App {
     public CommonHelper commonHelper = new CommonHelper();
     public LoginPageHelper loginPageHelper = new LoginPageHelper();
     public AccountPageHelper accountPageHelper = new AccountPageHelper();
+    public RegisterPageHelper registerPageHelper = new RegisterPageHelper();
+    public RegisterResultPageHelper registerResultPageHelper = new RegisterResultPageHelper();
 
 }

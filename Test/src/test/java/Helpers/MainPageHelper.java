@@ -11,7 +11,15 @@ public class MainPageHelper extends MainPage {
         clickLogInButton();
     }
 
+    public void logout(){
+        clickLogoutButton();
+    }
+
    public void openAccountPage(){
         clickMyAccountButton();
+   }
+
+   public void openRegisterPage(){
+        clickRegisterButton();
    }
 }

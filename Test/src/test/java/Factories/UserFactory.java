@@ -5,6 +5,7 @@ import net.bytebuddy.implementation.bytecode.Throw;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ResourceBundle;
+import java.util.UUID;
 
 public class UserFactory {
 
@@ -15,8 +16,12 @@ public class UserFactory {
     }
 
     public static User generateValidUser(){
-        throw new NotImplementedException();
-       // return new User();
+        User user = new User();
+        user.setFirstname(UUID.randomUUID().toString());
+        user.setLastname(UUID.randomUUID().toString());
+        user.setEmail(UUID.randomUUID().toString() + "@mail.com");
+        user.setPassword("Password1");
+        return user;
     }
 
 
