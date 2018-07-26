@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name=" Tests.Test">
+<suite name=" Functional.Test">
 
     <test name="Webdriver">
         <classes>
-            <class name="Tests.LoginTest" />
-            <!--class name = "Tests.TestGroup_second"/-->
+            <class name="Functional.LoginTest" />
+            <!--class name = "Functional.TestGroup_second"/-->
         </classes>
     </test>
 
