@@ -7,19 +7,24 @@ public class MainPageHelper extends MainPage {
     public MainPageHelper() {
     }
 
-    public void openLoginPage(){
+    public void openLoginPage() {
         clickLogInButton();
     }
 
-    public void logout(){
+    public void logout() {
         clickLogoutButton();
     }
 
-   public void openAccountPage(){
+    public void openAccountPage() {
         clickMyAccountButton();
-   }
+    }
 
-   public void openRegisterPage(){
+    public void openRegisterPage() {
         clickRegisterButton();
-   }
+    }
+
+    public void openComputersPage() {
+        clickComputersLink();
+    }
+
 }

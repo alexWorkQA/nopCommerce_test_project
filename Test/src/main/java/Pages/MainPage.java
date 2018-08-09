@@ -23,6 +23,9 @@ public class MainPage extends BasePage {
     @FindBy(xpath = ".//a[@href='/logout']")
     private WebElement logoutButton;
 
+    @FindBy(xpath = ".//a[@href='/computers']")
+    private WebElement computersLink;
+
 
     //MainPage methods
     protected LoginPage clickLogInButton() {
@@ -43,5 +46,10 @@ public class MainPage extends BasePage {
     protected MainPage clickLogoutButton() {
         logoutButton.click();
         return new MainPage();
+    }
+
+    protected ComputersPage clickComputersLink(){
+        computersLink.click();
+        return new ComputersPage();
     }
 }

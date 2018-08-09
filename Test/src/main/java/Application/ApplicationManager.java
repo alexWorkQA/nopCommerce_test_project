@@ -14,6 +14,7 @@ public class ApplicationManager implements Applicationable {
     public AccountPageHelper accountPageHelper = new AccountPageHelper();
     public RegisterPageHelper registerPageHelper = new RegisterPageHelper();
     public RegisterResultPageHelper registerResultPageHelper = new RegisterResultPageHelper();
+    public ComputersHelper computersHelper = new ComputersHelper();
 
 
     @Override

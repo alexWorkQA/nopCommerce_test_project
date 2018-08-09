@@ -12,6 +12,7 @@ public class BasePage {
 
     static {
         driver = WebDriverFactory.getDriverInstance();
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
     }
 
