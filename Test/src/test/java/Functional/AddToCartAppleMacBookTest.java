@@ -17,7 +17,9 @@ public class AddToCartAppleMacBookTest extends BaseTest {
     @Test
     public void addToCartAppleLaptop() {
         app.mainPageHelper.openComputersPage();
-        app.computersHelper.openDesktopsPage();
+        app.computersPageHelper.openNotebooksPage();
+        app.notebooksPageHelper.selectMacBookNotebook();
+        app.productPageHelper.addToCart();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

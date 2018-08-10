@@ -3,9 +3,6 @@ package Application;
 
 import Helpers.*;
 import Interfaces.Applicationable;
-import Pages.AccountPage;
-
-import java.io.IOException;
 
 public class ApplicationManager implements Applicationable {
     public MainPageHelper mainPageHelper = new MainPageHelper();
@@ -14,7 +11,9 @@ public class ApplicationManager implements Applicationable {
     public AccountPageHelper accountPageHelper = new AccountPageHelper();
     public RegisterPageHelper registerPageHelper = new RegisterPageHelper();
     public RegisterResultPageHelper registerResultPageHelper = new RegisterResultPageHelper();
-    public ComputersHelper computersHelper = new ComputersHelper();
+    public ComputersPageHelper computersPageHelper = new ComputersPageHelper();
+    public NotebooksPageHelper notebooksPageHelper = new NotebooksPageHelper();
+    public ProductPageHelper productPageHelper = new ProductPageHelper();
 
 
     @Override
