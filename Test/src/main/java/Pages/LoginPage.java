@@ -18,7 +18,7 @@ public class LoginPage extends BasePage{
     @FindBy(xpath=".//input[@class='button-1 login-button']")
     private WebElement loginButton;
 
-    protected MainPage loginToSite(User user){
+    public MainPage loginToSite(User user){
         email.sendKeys(user.getEmail());
         password.sendKeys(user.getPassword());
         loginButton.click();

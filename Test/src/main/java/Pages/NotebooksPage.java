@@ -8,7 +8,7 @@ public class NotebooksPage extends BasePage {
     @FindBy(xpath=".//a[@href='/apple-macbook-pro-13-inch']")
     private WebElement appleMacBookLink;
 
-    protected ProductPage selectMacBook(){
+    public ProductPage selectMacBook(){
         waitForVisibilityOf(appleMacBookLink);
         appleMacBookLink.click();
         return new ProductPage();

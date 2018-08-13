@@ -17,7 +17,7 @@ public class RegisterTest extends BaseTest {
        app.registerPageHelper.registerValidUser(testValidUser);
        String actualResult = app.registerResultPageHelper.getMessageForAssert();
        String expectedResult = "Your registration completed";
-        Assert.assertEquals(actualResult,expectedResult);
+       Assert.assertEquals(actualResult,expectedResult);
 
     }
 }

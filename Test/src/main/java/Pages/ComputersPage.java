@@ -18,7 +18,7 @@ public class ComputersPage extends BasePage {
         return new DesktopsPage();
     }
 
-    protected NotebooksPage clickNotebooksLink(){
+    public NotebooksPage clickNotebooksLink(){
         waitForVisibilityOf(notebooksLink);
         notebooksLink.click();
         return new NotebooksPage();

@@ -1,6 +1,7 @@
 package Application;
 
 
+import Factories.PageFactory;
 import Helpers.*;
 import Interfaces.Applicationable;
 
@@ -15,10 +16,16 @@ public class ApplicationManager implements Applicationable {
     public NotebooksPageHelper notebooksPageHelper = new NotebooksPageHelper();
     public ProductPageHelper productPageHelper = new ProductPageHelper();
 
+    public LoginHelper loginHelper = new LoginHelper();
+    public NavigationHelper navigationHelper = new NavigationHelper();
+    public RegistrationHelper registrationHelper = new RegistrationHelper();
+    public ProductHelper productHelper = new ProductHelper();
+
 
     @Override
     public void start() {
         commonHelper.openWebSite();
+        PageFactory.init();
     }
 
     @Override
