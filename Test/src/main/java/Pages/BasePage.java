@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class BasePage {
 
     protected static WebDriver driver;
-    protected static WebDriverWait wait;
+    private static WebDriverWait wait;
 
     static {
         driver = WebDriverFactory.getDriverInstance();
@@ -34,6 +34,10 @@ public class BasePage {
 
     public void visit(){
         driver.get(WebSiteFactory.getSite().siteUrl);
+    }
+
+    public void closeWebApp(){
+        driver.quit();
     }
 
 /*    public void click(WebElement element){

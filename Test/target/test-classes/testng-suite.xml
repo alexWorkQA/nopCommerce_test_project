@@ -5,7 +5,8 @@
 
     <test name="Webdriver">
         <classes>
-            <class name="Functional.LoginTest" />
+            <class name="Functional.RefactoredLoginTest" />
+            <class name="Functional.RefactoredRegistrationTest"/>
             <!--class name = "Functional.TestGroup_second"/-->
         </classes>
     </test>

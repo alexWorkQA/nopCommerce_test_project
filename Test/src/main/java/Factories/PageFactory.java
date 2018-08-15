@@ -22,6 +22,7 @@ public class PageFactory extends org.openqa.selenium.support.PageFactory {
     public static RegisterPage registerPage;
     public static RegisterResultPage registerResultPage;
     public static BasePage basePage;
+    public static ShoppingCartPage shoppingCartPage;
 
     static {
         driver = WebDriverFactory.getDriverInstance();
@@ -41,5 +42,6 @@ public class PageFactory extends org.openqa.selenium.support.PageFactory {
         productPage = PageFactory.initElements(driver,ProductPage.class);
         registerPage = PageFactory.initElements(driver,RegisterPage.class);
         registerResultPage = PageFactory.initElements(driver,RegisterResultPage.class);
+        shoppingCartPage = PageFactory.initElements(driver,ShoppingCartPage.class);
     }
 }

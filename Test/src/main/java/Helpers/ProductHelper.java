@@ -20,4 +20,6 @@ public class ProductHelper {
     public String getConfirmationMessageForAssert(){
         return PageFactory.productPage.getInformativeMessage();
     }
+
+
 }

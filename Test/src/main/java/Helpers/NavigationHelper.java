@@ -5,6 +5,7 @@ import com.gargoylesoftware.htmlunit.Page;
 
 public class NavigationHelper {
 
+
     public void openRegistrationPage() {
         PageFactory.mainPage.clickRegisterButton();
     }
@@ -27,5 +28,9 @@ public class NavigationHelper {
 
     public void openNotebooksPage(){
         PageFactory.computersPage.clickNotebooksLink();
+    }
+
+    public void openShoppingCartPage(){
+        PageFactory.mainPage.clickShoppingCartLink();
     }
 }
