@@ -26,30 +26,40 @@ public class MainPage extends BasePage {
     @FindBy(xpath = ".//a[@href='/computers']")
     private WebElement computersLink;
 
+    @FindBy(xpath=".//span[@class='cart-label']")
+    private WebElement shoppingCartLink;
+
 
     //MainPage methods
-    protected LoginPage clickLogInButton() {
+    public LoginPage clickLogInButton() {
         loginButton.click();
         return new LoginPage();
     }
 
-    protected AccountPage clickMyAccountButton() {
+    public AccountPage clickMyAccountButton() {
         myAccountButton.click();
         return new AccountPage();
     }
 
-    protected RegisterPage clickRegisterButton() {
+    public RegisterPage clickRegisterButton() {
+        waitForVisibilityOf(registerButton);
         registerButton.click();
         return new RegisterPage();
     }
 
-    protected MainPage clickLogoutButton() {
+    public MainPage clickLogoutButton() {
         logoutButton.click();
         return new MainPage();
     }
 
-    protected ComputersPage clickComputersLink(){
+    public ComputersPage clickComputersLink(){
         computersLink.click();
         return new ComputersPage();
+    }
+
+    public ShoppingCartPage clickShoppingCartLink(){
+        waitForVisibilityOf(shoppingCartLink);
+        shoppingCartLink.click();
+        return new ShoppingCartPage();
     }
 }

@@ -12,11 +12,11 @@ public class RegisterResultPage extends BasePage {
     @FindBy(xpath = ".//input[@name='register-continue']")
     private WebElement continueButton;
 
-    protected String getMessage() {
+    public String getMessage() {
         return resultMessage.getText();
     }
 
-    protected MainPage clickContinue() {
+    public MainPage clickContinue() {
         continueButton.click();
         return new MainPage();
     }
