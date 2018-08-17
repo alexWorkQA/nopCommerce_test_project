@@ -5,24 +5,24 @@ import org.openqa.selenium.support.FindBy;
 
 public class AccountPage extends BasePage {
 
-    @FindBy(xpath=".//input[@id='FirstName']")
+    @FindBy(xpath = ".//input[@id='FirstName']")
     private WebElement fisrtNameField;
 
-    @FindBy(xpath=".//input[@id='LastName']")
+    @FindBy(xpath = ".//input[@id='LastName']")
     private WebElement lastNameField;
 
-    @FindBy(xpath=".//input[@id='Email']")
+    @FindBy(xpath = ".//input[@id='Email']")
     private WebElement emailField;
 
-    protected String getFisrtName(){
+    public String getFisrtName() {
         return fisrtNameField.getAttribute("value");
     }
 
-    protected String getLastName(){
+    public String getLastName() {
         return lastNameField.getAttribute("value");
     }
 
-    protected String getEmail(){
+    public String getEmail() {
         return emailField.getAttribute("value");
     }
 }

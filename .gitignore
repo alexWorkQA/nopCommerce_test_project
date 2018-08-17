@@ -1,0 +1,14 @@
+/.idea/libraries/Maven__com_beust_jcommander_1_72.xml
+/.idea/libraries/*.xml
+.idea/*.xml
+Test/target/classes/Pages/*.class
+*.class
+Test/target/classes/Application/*.class
+
+Test/target/classes/Helpers/*.class
+*.iml
+*.iws
+./idea
+log/
+target/
+Test/target

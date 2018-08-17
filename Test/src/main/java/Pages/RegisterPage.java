@@ -24,7 +24,7 @@ public class RegisterPage extends BasePage{
     @FindBy(xpath=".//input[@id='register-button']")
     private WebElement registerButton;
 
-    protected RegisterResultPage fillOutForm(User user){
+    public RegisterResultPage fillOutForm(User user){
         fisrtNameField.sendKeys(user.getFirstname());
         lastNameField.sendKeys(user.getLastname());
         emailField.sendKeys(user.getEmail());

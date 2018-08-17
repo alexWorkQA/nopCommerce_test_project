@@ -1,30 +1,35 @@
 package Functional;
 
-import Models.User;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
-    //User testValidUser;
 
-    @BeforeMethod
-    public void openWebSite() {
+    @BeforeMethod(description = "Registration step is necessary because of user is expired in unknown period of time")
+    public void initialization() {
+        //register new user
         app.start();
-        app.mainPageHelper.openRegisterPage();
-        app.registerPageHelper.registerValidUser(testValidUser);
-        app.registerResultPageHelper.completeRegistration();
-        app.mainPageHelper.logout();
+        app.navigationHelper.openRegistrationPage();
+        app.registrationHelper.registrateValidUser(testValidUser);
+        app.registrationHelper.completeRegistration();
+        app.navigationHelper.openMainPageViaUrl();
+        app.loginHelper.logout();
+
     }
 
     @Test
-    public void loginTest() {
-        app.commonHelper.openWebSite();
-        app.mainPageHelper.openLoginPage();
-        app.loginPageHelper.loginAsValidUser(testValidUser);
-        app.mainPageHelper.openAccountPage();
-        User actualUser = app.accountPageHelper.getUser();
-        Assert.assertEquals(testValidUser,actualUser);
+    public void PositiveLoginTest() {
+        app.navigationHelper.openLoginPageViaURL();
+        app.loginHelper.loginValidUser(testValidUser);
+        app.navigationHelper.openAccountPage();
+        Assert.assertEquals(testValidUser, app.loginHelper.getLoggedInUser());
     }
 
+    @AfterMethod
+    public void finalize() {
+        app.navigationHelper.openMainPageViaUrl();
+        app.loginHelper.logout();
+    }
 }
