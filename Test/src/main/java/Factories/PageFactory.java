@@ -3,7 +3,6 @@ package Factories;
 import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.concurrent.TimeUnit;
 
 public class PageFactory extends org.openqa.selenium.support.PageFactory {
@@ -21,7 +20,7 @@ public class PageFactory extends org.openqa.selenium.support.PageFactory {
     public static ProductPage productPage;
     public static RegisterPage registerPage;
     public static RegisterResultPage registerResultPage;
-    public static BasePage basePage;
+   // public static BasePage basePage;
     public static ShoppingCartPage shoppingCartPage;
 
     static {
@@ -32,16 +31,17 @@ public class PageFactory extends org.openqa.selenium.support.PageFactory {
     }
 
     public static void init() {
-        basePage = PageFactory.initElements(driver,BasePage.class);
+        //basePage = PageFactory.initElements(driver, BasePage.class);
         accountPage = PageFactory.initElements(driver, AccountPage.class);
         loginPage = PageFactory.initElements(driver, LoginPage.class);
         mainPage = PageFactory.initElements(driver, MainPage.class);
         computersPage = PageFactory.initElements(driver, ComputersPage.class);
         desktopsPage = PageFactory.initElements(driver, DesktopsPage.class);
         notebooksPage = PageFactory.initElements(driver, NotebooksPage.class);
-        productPage = PageFactory.initElements(driver,ProductPage.class);
-        registerPage = PageFactory.initElements(driver,RegisterPage.class);
-        registerResultPage = PageFactory.initElements(driver,RegisterResultPage.class);
-        shoppingCartPage = PageFactory.initElements(driver,ShoppingCartPage.class);
+        productPage = PageFactory.initElements(driver, ProductPage.class);
+        registerPage = PageFactory.initElements(driver, RegisterPage.class);
+        registerResultPage = PageFactory.initElements(driver, RegisterResultPage.class);
+        shoppingCartPage = PageFactory.initElements(driver, ShoppingCartPage.class);
+        desktopsPage = PageFactory.initElements(driver,DesktopsPage.class);
     }
 }

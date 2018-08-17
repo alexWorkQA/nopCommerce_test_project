@@ -4,20 +4,28 @@ import Factories.PageFactory;
 
 public class ProductHelper {
 
-    public double getItemPrice(){
+    public double getItemPrice() {
         String price = PageFactory.productPage.getProductPrice();
         return Double.parseDouble(price);
     }
 
-    public void selectAppleMacBookPro(){
+    public void selectAppleMacBookPro() {
         PageFactory.notebooksPage.selectMacBook();
     }
 
-    public void addItemToCart(){
+    public void selectAsusN551() {
+        PageFactory.notebooksPage.selectAsusN551();
+    }
+
+    public void selectHPEnvy6() {
+        PageFactory.notebooksPage.selecthpEnvy6();
+    }
+
+    public void addItemToCart() {
         PageFactory.productPage.clickAddToCartButton();
     }
 
-    public String getConfirmationMessageForAssert(){
+    public String getConfirmationMessageForAssert() {
         return PageFactory.productPage.getInformativeMessage();
     }
 

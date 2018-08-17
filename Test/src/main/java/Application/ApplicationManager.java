@@ -18,11 +18,13 @@ public class ApplicationManager implements Applicationable {
     @Override
     public void start() {
         PageFactory.init();
-        navigationHelper.openMainPage();
+        //navigationHelper.openMainPage();
+        navigationHelper.openMainPageViaUrl();
     }
 
     @Override
     public void stop() {
-        PageFactory.basePage.closeWebApp();
+       // PageFactory.basePage.closeWebApp();
+        navigationHelper.closeWebBrowser();
     }
 }
