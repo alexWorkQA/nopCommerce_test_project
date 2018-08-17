@@ -21,4 +21,12 @@ public class LoginHelper {
         user.setEmail(PageFactory.accountPage.getEmail());
         return user;
     }
+
+    public String getEmailErrorMessage(){
+        return PageFactory.loginPage.getEmailErrorMessage();
+    }
+
+    public String getValidationErrorMessage(){
+        return PageFactory.loginPage.getValidationErrorMessage();
+    }
 }

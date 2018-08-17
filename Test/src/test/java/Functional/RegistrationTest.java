@@ -24,22 +24,29 @@ public class RegistrationTest extends BaseTest {
     public void NegativeRegistrationTestUserWithoutFName() {
         app.registrationHelper.registrateUser(testWOFNameUser);
         String expectedErrorMessage = "First name is required.";
-        Assert.assertEquals(expectedErrorMessage,app.registrationHelper.getFNameErrorMessage());
+        Assert.assertEquals(expectedErrorMessage, app.registrationHelper.getFNameErrorMessage());
     }
 
 
     @Test
-    public void NegativeRegistrationTestUserWithoutSName(){
+    public void NegativeRegistrationTestUserWithoutSName() {
         app.registrationHelper.registrateUser(testWOLNameUser);
         String expectedErrorMessage = "Last name is required.";
-        Assert.assertEquals(expectedErrorMessage,app.registrationHelper.getLNameErrorMessage());
+        Assert.assertEquals(expectedErrorMessage, app.registrationHelper.getLNameErrorMessage());
     }
 
     @Test
-    public void NegativeRegistrationTestUserWithoutEmail(){
+    public void NegativeRegistrationTestUserWithoutEmail() {
         app.registrationHelper.registrateUser(testWOEmailUser);
         String expectedErrorMessage = "Email is required.";
-        Assert.assertEquals(expectedErrorMessage,app.registrationHelper.getEMailErrorMessage());
+        Assert.assertEquals(expectedErrorMessage, app.registrationHelper.getEMailErrorMessage());
+    }
+
+    @Test
+    public void NegativeRegistrationTestUserWithoutPassword(){
+        app.registrationHelper.registrateUser(testWOPasswordUser);
+        String expectedErrorMessage = "Password is required.";
+        Assert.assertEquals(expectedErrorMessage,app.registrationHelper.getPasswordErrorMessage());
     }
 
 

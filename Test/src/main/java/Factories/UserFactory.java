@@ -52,4 +52,12 @@ public class UserFactory {
         return userIn;
     }
 
+    public static User generateNonValidUserWOPassword(User user) {
+        User userIn = new User();
+        userIn.setFirstname(user.getFirstname());
+        userIn.setLastname(user.getLastname());
+        userIn.setEmail(user.getEmail());
+        userIn.setPassword(EMPTY);
+        return userIn;
+    }
 }

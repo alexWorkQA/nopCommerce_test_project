@@ -12,6 +12,7 @@ public abstract class BaseTest {
     User testWOFNameUser;
     User testWOLNameUser;
     User testWOEmailUser;
+    User testWOPasswordUser;
 
     @BeforeSuite
     public void testSuiteInitialization() throws Exception {
@@ -20,6 +21,7 @@ public abstract class BaseTest {
         testWOFNameUser = UserFactory.generateNonValidUserWOFName(testValidUser);
         testWOLNameUser = UserFactory.generateNonValidUserWOLName(testValidUser);
         testWOEmailUser = UserFactory.generateNonValidUserWOEmail(testValidUser);
+        testWOPasswordUser= UserFactory.generateNonValidUserWOPassword(testValidUser);
     }
 
 

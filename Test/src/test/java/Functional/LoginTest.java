@@ -28,17 +28,25 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void NegativeLoginTest() throws InterruptedException {
+    public void NegativeLoginTestEmptyEmail() {
         app.navigationHelper.openLoginPageViaURL();
-        app.loginHelper.loginUser(testWOFNameUser);
+        app.loginHelper.loginUser(testWOEmailUser);
+        String expectedErrorMessage = "Please enter your email";
+        Assert.assertEquals(expectedErrorMessage,app.loginHelper.getEmailErrorMessage());
+    }
 
-
-        Thread.sleep(2000);
+    @Test
+    public void NegativeLoginTestEmptyPassword(){
+        app.navigationHelper.openLoginPageViaURL();
+        app.loginHelper.loginUser(testWOPasswordUser);
+        String expectedErrorMessage = "Login was unsuccessful.";
+        String actualErrorMessage = app.loginHelper.getValidationErrorMessage();
+        Assert.assertTrue(actualErrorMessage.contains(expectedErrorMessage));
     }
 
     @AfterMethod
     public void finalize() {
         app.navigationHelper.openMainPageViaUrl();
-       // app.loginHelper.logout();
+        // app.loginHelper.logout();
     }
 }

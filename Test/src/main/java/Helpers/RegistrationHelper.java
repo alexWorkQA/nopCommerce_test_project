@@ -29,4 +29,6 @@ public class RegistrationHelper {
     public String getEMailErrorMessage(){
         return PageFactory.registerPage.getEMailErrorMessage();
     }
+
+    public String getPasswordErrorMessage() { return PageFactory.registerPage.getPasswordErrorMessage(); }
 }

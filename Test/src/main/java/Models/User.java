@@ -7,6 +7,9 @@ public class User {
     private String lastname;
     private String password;
     private String email;
+    private String gender;
+    private String companyName;
+
 
 
     public String getEmail() {
