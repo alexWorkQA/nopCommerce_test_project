@@ -15,14 +15,37 @@ public class RegistrationTest extends BaseTest {
 
     @Test
     public void PositiveRegistrationTestSimpleValidUser() {
-        app.registrationHelper.registrateValidUser(testValidUser);
+        app.registrationHelper.registrateUser(testValidUser);
         String expectedResult = "Your registration completed";
         Assert.assertEquals(expectedResult, app.registrationHelper.getAssertMessage());
     }
 
+    @Test
+    public void NegativeRegistrationTestUserWithoutFName() {
+        app.registrationHelper.registrateUser(testWOFNameUser);
+        String expectedErrorMessage = "First name is required.";
+        Assert.assertEquals(expectedErrorMessage,app.registrationHelper.getFNameErrorMessage());
+    }
+
+
+    @Test
+    public void NegativeRegistrationTestUserWithoutSName(){
+        app.registrationHelper.registrateUser(testWOLNameUser);
+        String expectedErrorMessage = "Last name is required.";
+        Assert.assertEquals(expectedErrorMessage,app.registrationHelper.getLNameErrorMessage());
+    }
+
+    @Test
+    public void NegativeRegistrationTestUserWithoutEmail(){
+        app.registrationHelper.registrateUser(testWOEmailUser);
+        String expectedErrorMessage = "Email is required.";
+        Assert.assertEquals(expectedErrorMessage,app.registrationHelper.getEMailErrorMessage());
+    }
+
+
     @AfterMethod
     public void finalize() {
         app.navigationHelper.openMainPageViaUrl();
-        app.loginHelper.logout();
+        // app.loginHelper.logout();
     }
 }

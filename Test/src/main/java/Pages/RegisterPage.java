@@ -1,8 +1,10 @@
 package Pages;
 
 import Models.User;
+import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class RegisterPage extends BasePage{
 
@@ -24,6 +26,15 @@ public class RegisterPage extends BasePage{
     @FindBy(xpath=".//input[@id='register-button']")
     private WebElement registerButton;
 
+    @FindBy(xpath = ".//span[@id='FirstName-error']")
+    private WebElement fNameErrorMessage;
+
+    @FindBy(xpath=".//span[@id='LastName-error']")
+    private WebElement lNameErrorMessage;
+
+    @FindBy(xpath=".//span[@id='Email-error']")
+    private WebElement eMailErrorMessage;
+
     public RegisterResultPage fillOutForm(User user){
         fisrtNameField.sendKeys(user.getFirstname());
         lastNameField.sendKeys(user.getLastname());
@@ -34,4 +45,18 @@ public class RegisterPage extends BasePage{
         return new RegisterResultPage();
     }
 
+    public String getFNameErrorMessage(){
+        waitForVisibilityOf(fNameErrorMessage);
+        return fNameErrorMessage.getText();
+    }
+
+    public String getLNameErrorMessage(){
+        waitForVisibilityOf(lNameErrorMessage);
+        return lNameErrorMessage.getText();
+    }
+
+    public String getEMailErrorMessage(){
+        waitForVisibilityOf(eMailErrorMessage);
+        return eMailErrorMessage.getText();
+    }
 }

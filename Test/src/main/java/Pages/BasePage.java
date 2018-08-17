@@ -2,11 +2,9 @@ package Pages;
 
 import Factories.WebDriverFactory;
 import Factories.WebSiteFactory;
-import Interfaces.PageManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 

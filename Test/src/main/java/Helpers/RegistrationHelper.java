@@ -2,10 +2,11 @@ package Helpers;
 
 import Factories.PageFactory;
 import Models.User;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class RegistrationHelper {
 
-    public void registrateValidUser(User user){
+    public void registrateUser(User user){
         PageFactory.registerPage.fillOutForm(user);
     }
 
@@ -15,5 +16,17 @@ public class RegistrationHelper {
 
     public void completeRegistration(){
         PageFactory.registerResultPage.clickContinue();
+    }
+
+    public String getFNameErrorMessage(){
+        return PageFactory.registerPage.getFNameErrorMessage();
+    }
+
+    public String getLNameErrorMessage(){
+        return PageFactory.registerPage.getLNameErrorMessage();
+    }
+
+    public String getEMailErrorMessage(){
+        return PageFactory.registerPage.getEMailErrorMessage();
     }
 }

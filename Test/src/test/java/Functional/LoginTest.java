@@ -12,7 +12,7 @@ public class LoginTest extends BaseTest {
         //register new user
         app.start();
         app.navigationHelper.openRegistrationPage();
-        app.registrationHelper.registrateValidUser(testValidUser);
+        app.registrationHelper.registrateUser(testValidUser);
         app.registrationHelper.completeRegistration();
         app.navigationHelper.openMainPageViaUrl();
         app.loginHelper.logout();
@@ -22,14 +22,23 @@ public class LoginTest extends BaseTest {
     @Test
     public void PositiveLoginTest() {
         app.navigationHelper.openLoginPageViaURL();
-        app.loginHelper.loginValidUser(testValidUser);
+        app.loginHelper.loginUser(testValidUser);
         app.navigationHelper.openAccountPage();
         Assert.assertEquals(testValidUser, app.loginHelper.getLoggedInUser());
+    }
+
+    @Test
+    public void NegativeLoginTest() throws InterruptedException {
+        app.navigationHelper.openLoginPageViaURL();
+        app.loginHelper.loginUser(testWOFNameUser);
+
+
+        Thread.sleep(2000);
     }
 
     @AfterMethod
     public void finalize() {
         app.navigationHelper.openMainPageViaUrl();
-        app.loginHelper.logout();
+       // app.loginHelper.logout();
     }
 }

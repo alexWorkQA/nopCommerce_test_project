@@ -17,7 +17,7 @@ public class AddToCartAppleMacBookLaptop extends BaseTest {
         //register new user
         app.start();
         app.navigationHelper.openRegistrationPage();
-        app.registrationHelper.registrateValidUser(testValidUser);
+        app.registrationHelper.registrateUser(testValidUser);
         app.registrationHelper.completeRegistration();
         app.navigationHelper.openMainPageViaUrl();
     }
