@@ -5,7 +5,7 @@ import Models.User;
 
 public class LoginHelper {
 
-    public void loginValidUser(User user){
+    public void loginUser(User user){
         //PageFactory.mainPage.visit();
         PageFactory.loginPage.loginToSite(user);
     }
@@ -20,5 +20,13 @@ public class LoginHelper {
         user.setLastname(PageFactory.accountPage.getLastName());
         user.setEmail(PageFactory.accountPage.getEmail());
         return user;
+    }
+
+    public String getEmailErrorMessage(){
+        return PageFactory.loginPage.getEmailErrorMessage();
+    }
+
+    public String getValidationErrorMessage(){
+        return PageFactory.loginPage.getValidationErrorMessage();
     }
 }

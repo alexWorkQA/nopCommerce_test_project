@@ -12,7 +12,7 @@ public class LoginTest extends BaseTest {
         //register new user
         app.start();
         app.navigationHelper.openRegistrationPage();
-        app.registrationHelper.registrateValidUser(testValidUser);
+        app.registrationHelper.registrateUser(testValidUser);
         app.registrationHelper.completeRegistration();
         app.navigationHelper.openMainPageViaUrl();
         app.loginHelper.logout();
@@ -22,14 +22,31 @@ public class LoginTest extends BaseTest {
     @Test
     public void PositiveLoginTest() {
         app.navigationHelper.openLoginPageViaURL();
-        app.loginHelper.loginValidUser(testValidUser);
+        app.loginHelper.loginUser(testValidUser);
         app.navigationHelper.openAccountPage();
         Assert.assertEquals(testValidUser, app.loginHelper.getLoggedInUser());
+    }
+
+    @Test
+    public void NegativeLoginTestEmptyEmail() {
+        app.navigationHelper.openLoginPageViaURL();
+        app.loginHelper.loginUser(testWOEmailUser);
+        String expectedErrorMessage = "Please enter your email";
+        Assert.assertEquals(expectedErrorMessage,app.loginHelper.getEmailErrorMessage());
+    }
+
+    @Test
+    public void NegativeLoginTestEmptyPassword(){
+        app.navigationHelper.openLoginPageViaURL();
+        app.loginHelper.loginUser(testWOPasswordUser);
+        String expectedErrorMessage = "Login was unsuccessful.";
+        String actualErrorMessage = app.loginHelper.getValidationErrorMessage();
+        Assert.assertTrue(actualErrorMessage.contains(expectedErrorMessage));
     }
 
     @AfterMethod
     public void finalize() {
         app.navigationHelper.openMainPageViaUrl();
-        app.loginHelper.logout();
+        // app.loginHelper.logout();
     }
 }
