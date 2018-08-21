@@ -17,8 +17,8 @@ Tests:
 Known problem
 - PageFactory class has a lot of Ctrl-C/Ctrl-V in init() method:
 
+```sh
     public static void init() {
-        //basePage = PageFactory.initElements(driver, BasePage.class);
         accountPage = PageFactory.initElements(driver, AccountPage.class);
         loginPage = PageFactory.initElements(driver, LoginPage.class);
         mainPage = PageFactory.initElements(driver, MainPage.class);
@@ -31,5 +31,5 @@ Known problem
         shoppingCartPage = PageFactory.initElements(driver, ShoppingCartPage.class);
         desktopsPage = PageFactory.initElements(driver,DesktopsPage.class);
     }
-
+```
 
