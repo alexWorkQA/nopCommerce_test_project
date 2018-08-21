@@ -3,7 +3,7 @@ package Functional;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class AddToCartAppleMacBookLaptop extends AddToCartTests {
+public class AddToCartAppleMacBookLaptopTest extends AddToCartTests {
 
     private double price;
 

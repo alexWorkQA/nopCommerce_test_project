@@ -5,7 +5,7 @@ import org.testng.annotations.*;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class AddToCartProducts extends AddToCartTests {
+public class AddToCartProductsTest extends AddToCartTests {
 
     private double priceAsus;
     private double priceHPEnvy6;
@@ -16,13 +16,13 @@ public class AddToCartProducts extends AddToCartTests {
         app.navigationHelper.openComputerPage();
         app.navigationHelper.openNotebooksPage();
         app.productHelper.selectAsusN551();
-        priceAsus = app.productHelper.getItemPrice();
+        expectedTotalPrice.add(app.productHelper.getItemPrice());
         app.productHelper.addItemToCart();
         app.navigationHelper.openMainPageViaUrl();
         app.navigationHelper.openComputerPage();
         app.navigationHelper.openNotebooksPage();
         app.productHelper.selectHPEnvy6();
-        priceHPEnvy6 = app.productHelper.getItemPrice();
+        expectedTotalPrice.add(app.productHelper.getItemPrice());
         app.productHelper.addItemToCart();
         app.navigationHelper.openMainPageViaUrl();
         app.navigationHelper.openShoppingCartPage();
@@ -33,8 +33,8 @@ public class AddToCartProducts extends AddToCartTests {
 
     @Test(description = "Total price = price Asus + price HP Envy")
     public void totalPriceShouldIncludePricesForBouthItems() {
-        String expectedTotalPrice = format.format(priceAsus + priceHPEnvy6);
-        Assert.assertEquals(expectedTotalPrice, actualTotalPrice);
+        String expectedResult = getExpectedTotalPrice(expectedTotalPrice);
+        Assert.assertEquals(expectedResult, actualTotalPrice);
     }
 
     @Test(description = "Items should be shown in the list")

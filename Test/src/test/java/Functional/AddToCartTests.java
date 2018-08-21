@@ -19,7 +19,7 @@ public class AddToCartTests extends BaseTest {
     @BeforeSuite
     public void registration() {
         app.start();
-        app.navigationHelper.openRegistrationPage();
+        app.navigationHelper.openRegistrationPageViaUrl();
         app.registrationHelper.registrateUser(testValidUser);
         app.registrationHelper.completeRegistration();
     }

@@ -12,7 +12,7 @@ public class ComputersPage extends BasePage {
     private WebElement notebooksLink;
 
 
-    protected DesktopsPage clickDesktopsLink(){
+    public DesktopsPage clickDesktopsLink(){
         waitForVisibilityOf(desktopsLink);
         desktopsLink.click();
         return new DesktopsPage();

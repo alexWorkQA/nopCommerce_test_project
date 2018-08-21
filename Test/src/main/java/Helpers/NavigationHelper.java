@@ -15,6 +15,10 @@ public class NavigationHelper {
         WebDriverFactory.getDriverInstance().get(WebSiteFactory.getSite().siteUrl+"/login");
     }
 
+    public void openRegistrationPageViaUrl(){
+        WebDriverFactory.getDriverInstance().get(WebSiteFactory.getSite().siteUrl+"/register");
+    }
+
     public void openRegistrationPage() {
         PageFactory.mainPage.clickRegisterButton();
     }
@@ -38,6 +42,8 @@ public class NavigationHelper {
     public void openNotebooksPage() {
         PageFactory.computersPage.clickNotebooksLink();
     }
+
+    public void openDesktopPage(){PageFactory.computersPage.clickDesktopsLink();}
 
     public void openShoppingCartPage() {
         PageFactory.mainPage.clickShoppingCartLink();
