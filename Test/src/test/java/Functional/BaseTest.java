@@ -15,18 +15,19 @@ public abstract class BaseTest {
     User testWOPasswordUser;
 
     @BeforeSuite
-    public void testSuiteInitialization() throws Exception {
+    public void testSuiteInitialization() {
         app = new ApplicationManager();
+
         testValidUser = UserFactory.generateValidUser();
         testWOFNameUser = UserFactory.generateNonValidUserWOFName(testValidUser);
         testWOLNameUser = UserFactory.generateNonValidUserWOLName(testValidUser);
         testWOEmailUser = UserFactory.generateNonValidUserWOEmail(testValidUser);
-        testWOPasswordUser= UserFactory.generateNonValidUserWOPassword(testValidUser);
+        testWOPasswordUser = UserFactory.generateNonValidUserWOPassword(testValidUser);
     }
 
 
     @AfterSuite
-    public void testSuiteComplete() throws Exception {
+    public void testSuiteComplete() {
         app.stop();
     }
 }
