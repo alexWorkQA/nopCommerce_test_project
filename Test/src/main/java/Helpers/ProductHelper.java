@@ -9,7 +9,7 @@ public class ProductHelper {
         return Double.parseDouble(price);
     }
 
-    public String getPriceString(){
+    public String getPriceString() {
         return PageFactory.productPage.getPrice();
     }
 
@@ -25,13 +25,15 @@ public class ProductHelper {
         PageFactory.notebooksPage.selecthpEnvy6();
     }
 
-    public void selectOwnBuild(){PageFactory.desktopsPage.selectOwnBuild();}
+    public void selectOwnBuild() {
+        PageFactory.desktopsPage.selectOwnBuild();
+    }
 
     public void addItemToCart() {
         PageFactory.productPage.clickAddToCartButton();
     }
 
-    public void addAcrobatReaderToOwnBuild(){
+    public void addAcrobatReaderToOwnBuild() {
         PageFactory.productPage.addAcrobatReaderToOwnBuild();
     }
 
@@ -39,9 +41,12 @@ public class ProductHelper {
         return PageFactory.productPage.getInformativeMessage();
     }
 
-    public void waitWhenPriceChanged(String oldPrice){
+    public void waitWhenPriceChanged(String oldPrice) {
         PageFactory.productPage.waitForPriceChanged(oldPrice);
     }
 
+    public void selectVistaPremium(){
+        PageFactory.productPage.selectVistaPremium();
+    }
 
 }

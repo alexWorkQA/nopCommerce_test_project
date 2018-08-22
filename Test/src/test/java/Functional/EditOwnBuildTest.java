@@ -6,7 +6,7 @@ import org.testng.annotations.*;
 
 public class EditOwnBuildTest extends AddToCartTests {
 
-    private String itemPrice;
+    private String actualItemPrice;
     private final double ACROBAT_PRICE = 10;
     private final double TOTAL_COMMANDER_PRICE = 5;
     private final double VISTA_PREMIUM_PRICE = 60;
@@ -14,9 +14,8 @@ public class EditOwnBuildTest extends AddToCartTests {
     private double DEFAULT_BUILD_PRICE = 1200;
     private double HDD_400_PRICE = 100;
     private double MS_OFFICE_PRICE = 50;
-    private double intelPentium25GHz = 15;
-    private double actualDefaultPrice;
-
+    private double INTEL_PENTIUM_25_GHZ = 15;
+    private double expectedDefaultPrice;
 
 
     @BeforeClass
@@ -25,13 +24,13 @@ public class EditOwnBuildTest extends AddToCartTests {
         app.navigationHelper.openComputerPage();
         app.navigationHelper.openDesktopPage();
         app.productHelper.selectOwnBuild();
-        itemPrice = app.productHelper.getPriceString();
+        actualItemPrice = app.productHelper.getPriceString();
     }
 
     @Test
     public void defaultPriceShouldBeCorrect() {
-        actualDefaultPrice = DEFAULT_BUILD_PRICE+MS_OFFICE_PRICE+VISTA_HOME_PRICE+intelPentium25GHz;
-        Assert.assertEquals(app.moneyHelper.fromDoubleToString(actualDefaultPrice),itemPrice);
+        expectedDefaultPrice = DEFAULT_BUILD_PRICE + MS_OFFICE_PRICE + VISTA_HOME_PRICE + INTEL_PENTIUM_25_GHZ;
+        Assert.assertEquals( actualItemPrice, app.moneyHelper.fromDoubleToString(expectedDefaultPrice));
     }
 
     @Test
@@ -39,12 +38,20 @@ public class EditOwnBuildTest extends AddToCartTests {
         String oldPrice = app.productHelper.getPriceString();
         app.productHelper.addAcrobatReaderToOwnBuild();
         app.productHelper.waitWhenPriceChanged(oldPrice);
-        itemPrice = app.productHelper.getPriceString();
-        actualDefaultPrice = DEFAULT_BUILD_PRICE+MS_OFFICE_PRICE+VISTA_HOME_PRICE+intelPentium25GHz + ACROBAT_PRICE;
-        Assert.assertEquals(app.moneyHelper.fromDoubleToString(actualDefaultPrice), itemPrice);
+        actualItemPrice = app.productHelper.getPriceString();
+        expectedDefaultPrice = DEFAULT_BUILD_PRICE + MS_OFFICE_PRICE + VISTA_HOME_PRICE + INTEL_PENTIUM_25_GHZ + ACROBAT_PRICE;
+        Assert.assertEquals( actualItemPrice, app.moneyHelper.fromDoubleToString(expectedDefaultPrice));
     }
 
-
+    @Test
+    public void changeOS() {
+        String oldPrice = app.productHelper.getPriceString();
+        app.productHelper.selectVistaPremium();
+        app.productHelper.waitWhenPriceChanged(oldPrice);
+        actualItemPrice = app.productHelper.getPriceString();
+        expectedDefaultPrice = DEFAULT_BUILD_PRICE + MS_OFFICE_PRICE + VISTA_PREMIUM_PRICE + INTEL_PENTIUM_25_GHZ;
+        Assert.assertEquals( actualItemPrice, app.moneyHelper.fromDoubleToString(expectedDefaultPrice));
+    }
 
 
 }

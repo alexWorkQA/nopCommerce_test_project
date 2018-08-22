@@ -17,6 +17,9 @@ public class ProductPage extends BasePage {
     @FindBy(xpath=".//input[@id='product_attribute_5_11']")
     private WebElement ownBuildAcrobatReader;
 
+    @FindBy(xpath=".//input[@id='product_attribute_4_9']")
+    private WebElement ownBuildVistaPremium;
+
     public ProductPage clickAddToCartButton() {
         addToCartButton.click();
         return this;
@@ -46,5 +49,11 @@ public class ProductPage extends BasePage {
         while(price.getText().equalsIgnoreCase(value)){
             String blue = "Test";
         }
+    }
+
+    public ProductPage selectVistaPremium(){
+        waitForVisibilityOf(ownBuildVistaPremium);
+        ownBuildVistaPremium.click();
+        return this;
     }
 }
