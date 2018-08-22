@@ -6,7 +6,6 @@ import Models.User;
 public class LoginHelper {
 
     public void loginUser(User user){
-        //PageFactory.mainPage.visit();
         PageFactory.loginPage.loginToSite(user);
     }
 

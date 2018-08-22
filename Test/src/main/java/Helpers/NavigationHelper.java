@@ -23,10 +23,6 @@ public class NavigationHelper {
         PageFactory.mainPage.clickRegisterButton();
     }
 
-   // public void openMainPage() {
-     //   PageFactory.basePage.visit();
-    //}
-
     public void openLoginPage() {
         PageFactory.mainPage.clickLogInButton();
     }

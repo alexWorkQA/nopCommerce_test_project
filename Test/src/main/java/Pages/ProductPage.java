@@ -42,4 +42,9 @@ public class ProductPage extends BasePage {
         return informativeMessage.getText();
     }
 
+    public void waitForPriceChanged(String value){
+        while(price.getText().equalsIgnoreCase(value)){
+            String blue = "Test";
+        }
+    }
 }

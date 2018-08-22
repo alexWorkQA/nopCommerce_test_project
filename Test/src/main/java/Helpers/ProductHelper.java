@@ -39,5 +39,9 @@ public class ProductHelper {
         return PageFactory.productPage.getInformativeMessage();
     }
 
+    public void waitWhenPriceChanged(String oldPrice){
+        PageFactory.productPage.waitForPriceChanged(oldPrice);
+    }
+
 
 }

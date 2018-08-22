@@ -2,13 +2,8 @@ package Functional;
 
 import org.testng.Assert;
 import org.testng.annotations.*;
-import java.text.NumberFormat;
-import java.util.Locale;
 
 public class AddToCartProductsTest extends AddToCartTests {
-
-    private double priceAsus;
-    private double priceHPEnvy6;
 
     @BeforeClass(description = "Registration step is necessary because of user is expired in unknown period of time")
     public void addTwoItemsToTheShoppingCart() {
@@ -28,7 +23,7 @@ public class AddToCartProductsTest extends AddToCartTests {
         app.navigationHelper.openShoppingCartPage();
         actualTotalPrice = app.shoppingCartHelper.getTotalPrice();
         products = app.shoppingCartHelper.getProductsList();
-        format = NumberFormat.getCurrencyInstance(Locale.US);
+        //format = NumberFormat.getCurrencyInstance(Locale.US);
     }
 
     @Test(description = "Total price = price Asus + price HP Envy")

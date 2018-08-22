@@ -1,13 +1,22 @@
 package Functional;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 
 public class EditOwnBuildTest extends AddToCartTests {
 
-    private String expectedItemPrice = "$1,315.00";
     private String itemPrice;
+    private final double ACROBAT_PRICE = 10;
+    private final double TOTAL_COMMANDER_PRICE = 5;
+    private final double VISTA_PREMIUM_PRICE = 60;
+    private final double VISTA_HOME_PRICE = 50;
+    private double DEFAULT_BUILD_PRICE = 1200;
+    private double HDD_400_PRICE = 100;
+    private double MS_OFFICE_PRICE = 50;
+    private double intelPentium25GHz = 15;
+    private double actualDefaultPrice;
+
 
 
     @BeforeClass
@@ -21,22 +30,21 @@ public class EditOwnBuildTest extends AddToCartTests {
 
     @Test
     public void defaultPriceShouldBeCorrect() {
-        Assert.assertEquals(expectedItemPrice, itemPrice);
+        actualDefaultPrice = DEFAULT_BUILD_PRICE+MS_OFFICE_PRICE+VISTA_HOME_PRICE+intelPentium25GHz;
+        Assert.assertEquals(app.moneyHelper.fromDoubleToString(actualDefaultPrice),itemPrice);
     }
 
     @Test
-    public void addAcrobatReader() throws InterruptedException {
-        Thread.sleep(2000);
+    public void addAcrobatReader() {
+        String oldPrice = app.productHelper.getPriceString();
         app.productHelper.addAcrobatReaderToOwnBuild();
-        Thread.sleep(2000);
+        app.productHelper.waitWhenPriceChanged(oldPrice);
         itemPrice = app.productHelper.getPriceString();
-        Assert.assertEquals(expectedItemPrice,itemPrice);
+        actualDefaultPrice = DEFAULT_BUILD_PRICE+MS_OFFICE_PRICE+VISTA_HOME_PRICE+intelPentium25GHz + ACROBAT_PRICE;
+        Assert.assertEquals(app.moneyHelper.fromDoubleToString(actualDefaultPrice), itemPrice);
     }
 
-    /*@Test
-    public void priceShouldBeCorrect(){
-        String expectedPriceByDefault = "$1.200";
-        Assert.assertEquals(expectedPriceByDefault,actualTotalPrice);
-    }*/
+
+
 
 }

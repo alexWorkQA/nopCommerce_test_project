@@ -53,6 +53,5 @@ public class RegistrationTest extends BaseTest {
     @AfterMethod
     public void finalize() {
         app.navigationHelper.openMainPageViaUrl();
-        // app.loginHelper.logout();
     }
 }
