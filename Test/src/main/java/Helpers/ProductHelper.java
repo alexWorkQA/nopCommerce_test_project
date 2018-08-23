@@ -9,6 +9,10 @@ public class ProductHelper {
         return Double.parseDouble(price);
     }
 
+    public String getPriceString() {
+        return PageFactory.productPage.getPrice();
+    }
+
     public void selectAppleMacBookPro() {
         PageFactory.notebooksPage.selectMacBook();
     }
@@ -21,13 +25,28 @@ public class ProductHelper {
         PageFactory.notebooksPage.selecthpEnvy6();
     }
 
+    public void selectOwnBuild() {
+        PageFactory.desktopsPage.selectOwnBuild();
+    }
+
     public void addItemToCart() {
         PageFactory.productPage.clickAddToCartButton();
+    }
+
+    public void addAcrobatReaderToOwnBuild() {
+        PageFactory.productPage.addAcrobatReaderToOwnBuild();
     }
 
     public String getConfirmationMessageForAssert() {
         return PageFactory.productPage.getInformativeMessage();
     }
 
+    public void waitWhenPriceChanged(String oldPrice) {
+        PageFactory.productPage.waitForPriceChanged(oldPrice);
+    }
+
+    public void selectVistaPremium(){
+        PageFactory.productPage.selectVistaPremium();
+    }
 
 }

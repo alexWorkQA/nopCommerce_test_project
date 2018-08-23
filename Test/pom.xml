@@ -35,6 +35,11 @@
             <artifactId>selenium-firefox-driver</artifactId>
             <version>3.13.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.javamoney</groupId>
+            <artifactId>moneta</artifactId>
+            <version>1.1</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
